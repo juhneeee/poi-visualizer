@@ -25,7 +25,7 @@ function setup() {
   toggleFill = createButton('fill in path')
   toggleFill.mousePressed(()=>{fillPath = !fillPath})
 
-  
+
 }
 
 // let r= rSlider.value()
