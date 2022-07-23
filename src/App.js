@@ -6,11 +6,27 @@ function App() {
   let r = 50
   let t = 0
 
+  class Vector {
+    constructor(arr) {
+      this.arr = arr;
+    }
+    add(otherVector) {
+      const oa = otherVector.arr;
+      if (this.arr.length === oa.length) {
+        let res = []
+        for(let key in this.arr) {
+          res[key] = this.arr[key] + oa[key]
+        }
+        return new Vector(res)
+      }
+    }
+  }
+
   const setup = (p5, parent) => {
     p5.createCanvas(500, 500).parent(parent)
   }
   function polar(r, t){
-   new p5.Vector(r* p5.cos(t), r* p5.sin(t))
+   return new Vector([r* Math.cos(t), r* Math.sin(t)])
   }
 
 
