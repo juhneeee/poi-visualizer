@@ -12,12 +12,22 @@ function setup() {
   createCanvas(400, 400);
 
   // rSlider= createSlider(20,100)
-  redOffsetSlider = createSlider(0, TWO_PI, TWO_PI / 2, TWO_PI/6)
+  // redOffsetLabel = createElement('p', 'Offset')
+  // redOffsetInput = createInput(redOffsetSlider.value())
+  offsetLabel = createDiv('Offset');
+  offsetLabel.position(30, 500);  
+  redOffsetSlider = createSlider(0, 1, .5 , .1)
+  redOffsetSlider.parent(offsetLabel);
+
+  incrementLabel = createDiv ('animation speed')
+  incrementLabel.position(30, 700)
   incrementSlider = createSlider(0, 1, .3, .1)  
+  incrementSlider.parent(offsetLabel)
   poiSpeedSlider = createSlider(-10, 10, -3)
   // nSlider= createSlider(1,10)
   resetButton = createButton('reset canvas')
   resetButton.mousePressed(changeBG)
+
 
   toggleTrail = createButton('show trail')
   toggleTrail.mousePressed(()=>{showTrail = !showTrail})
@@ -43,7 +53,7 @@ function draw() {
   middle()
 
   let r= 70
-  let redOffset = redOffsetSlider.value()
+  let redOffset = redOffsetSlider.value() * TWO_PI
   let increment = incrementSlider.value()
   let poiSpeed = poiSpeedSlider .value()
   // let n= nSlider.value()
@@ -75,7 +85,7 @@ function leftHand(r,t){
   parametricCircle(r,t)
 }
 
-function rightHand(r,t,){
+function rightHand(r,t){
   stroke("pink")
   strokeWeight(10)
   parametricCircle(r,t)

@@ -1,4 +1,3 @@
-import p5 from 'p5';
 import React from 'react';
 import Sketch from 'react-p5';
 
@@ -40,10 +39,6 @@ function App() {
   return <div className='App'>
 
     <Sketch setup={setup} draw={draw} />
-
-    <div class="slidecontainer">
-      <input type="range" min="1" max="100" value="50" class="slider" id="myRange"/>
-    </div>
   </div>
   
 }
