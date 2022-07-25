@@ -1,12 +1,7 @@
-let rSlider
-let redOffsetSlider
-let incrementSlider
-let poiSpeedSlider
-let nSlider
-let resetButton
-let toggleTrail
+let rSlider, redOffsetSlider, incrementSlider, poiSpeedSlider, nSlider, resetButton, toggleTrail
 let showTrail = true
 let fillPath = false
+let t=0
 
 function setup() {
   createCanvas(400, 400);
@@ -19,10 +14,11 @@ function setup() {
   redOffsetSlider = createSlider(0, 1, .5 , .1)
   redOffsetSlider.parent(offsetLabel);
 
-  incrementLabel = createDiv ('animation speed')
-  incrementLabel.position(30, 700)
+  incrementLabel = createDiv('speed')
+  incrementLabel.position(30, 550)
   incrementSlider = createSlider(0, 1, .3, .1)  
-  incrementSlider.parent(offsetLabel)
+  incrementSlider.parent(incrementLabel)
+
   poiSpeedSlider = createSlider(-10, 10, -3)
   // nSlider= createSlider(1,10)
   resetButton = createButton('reset canvas')
@@ -37,14 +33,6 @@ function setup() {
 
 
 }
-
-// let r= rSlider.value()
-// let t=0
-// let redOffset = redOffsetSlider.value()
-// let increment = incrementSlider.value()
-// let poiSpeed = poiSpeed.value()
-// let n= nSlider.value()
-let t=0
 
 function draw() {
 
