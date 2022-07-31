@@ -20,7 +20,9 @@ function setup() {
   incrementSlider.parent(incrementLabel)
 
   poiSpeedLabel=createDiv('poi speed')
+  poiSpeedLabel.position(30,600)
   poiSpeedSlider = createSlider(-10, 10, -3)
+  poiSpeedSlider.parent(poiSpeedLabel)
   // nSlider= createSlider(1,10)
   resetButton = createButton('reset canvas')
   resetButton.mousePressed(changeBG)
