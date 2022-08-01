@@ -41,7 +41,10 @@ function draw() {
 
   if (!fillPath){background("white")}
   translate(width/2, height/2)
-  middle()
+  // middle
+  stroke("black")
+  strokeWeight(10)
+  point(0,0)
 
   let r= 70
   let redOffset = redOffsetSlider.value() * TWO_PI
@@ -82,11 +85,7 @@ function rightHand(r,t){
   parametricCircle(r,t)
 }
 
-function middle(){
-  stroke("black")
-  strokeWeight(10)
-  point(0,0)
-}
+
 
 function parametricCircle(r, t){
   point (r * cos(t), r * sin(t))
